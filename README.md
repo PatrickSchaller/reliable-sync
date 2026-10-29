@@ -86,10 +86,11 @@ The simulator exposes `GET /events/{scenario}?after=N` and returns HTTP 200 JSON
 {
   "streamId": "demo-catalog-v1",
   "requestedAfter": 0,
-  "nextCursor": 1,
-  "hasMore": false,
+  "nextCursor": 2,
+  "hasMore": true,
   "events": [
-    { "cursor": 1, "eventId": "evt-001", "sku": "HW-104", "name": "Brass cabinet handle", "quantity": 10 }
+    { "cursor": 1, "eventId": "evt-001", "sku": "HW-104", "name": "Brass cabinet handle", "quantity": 10 },
+    { "cursor": 2, "eventId": "evt-002", "sku": "HW-208", "name": "Steel corner bracket", "quantity": 24 }
   ]
 }
 ```
@@ -113,7 +114,7 @@ The 41 tests use real temporary SQLite databases, deterministic HTTP handlers, a
 
 One check deliberately makes the checkpoint write fail after item/event writes have been attempted, then reopens the database to verify that none of that page survived. This is an exception/rollback check, not a physical power-loss or forced-process-kill test.
 
-The recorded walkthrough also verifies actual command exit statuses across separate worker processes. GitHub Actions runs the test suite on Linux and Windows.
+The recorded walkthrough also verifies actual command exit statuses across separate worker processes. GitHub Actions runs the test suite on Linux and Windows. See [the validation record](docs/validation.md) for the verified results and their limits.
 
 ## Logs and exit codes
 
