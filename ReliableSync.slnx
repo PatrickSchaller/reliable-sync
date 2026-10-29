@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/ReliableSync/ReliableSync.csproj" />
+  <Project Path="tests/ReliableSync.Tests/ReliableSync.Tests.csproj" />
+</Solution>

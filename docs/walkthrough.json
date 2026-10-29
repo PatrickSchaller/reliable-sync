@@ -1,0 +1,253 @@
+{
+  "failed_run": {
+    "exit_code": 1,
+    "events": [
+      {
+        "event": "page_requested",
+        "after": 0
+      },
+      {
+        "event": "page_committed",
+        "cursor": 2,
+        "received": 2,
+        "applied": 2
+      },
+      {
+        "event": "page_requested",
+        "after": 2
+      },
+      {
+        "event": "retry",
+        "after": 2,
+        "attempt": 1,
+        "reason": "http_503",
+        "delayMilliseconds": 250
+      },
+      {
+        "event": "retry",
+        "after": 2,
+        "attempt": 2,
+        "reason": "http_503",
+        "delayMilliseconds": 500
+      }
+    ],
+    "error": {
+      "event": "stopped",
+      "message": "Source returned HTTP 503 after 3 attempts. Run again later to resume.",
+      "recovery": "Use status to inspect committed data, then run again when the source is ready."
+    }
+  },
+  "after_failure": {
+    "streamId": "demo-catalog-v1",
+    "cursor": 2,
+    "appliedEvents": 2,
+    "items": [
+      {
+        "sku": "HW-104",
+        "name": "Brass cabinet handle",
+        "quantity": 10,
+        "lastCursor": 1
+      },
+      {
+        "sku": "HW-208",
+        "name": "Steel corner bracket",
+        "quantity": 24,
+        "lastCursor": 2
+      }
+    ]
+  },
+  "resumed_run": {
+    "exit_code": 0,
+    "events": [
+      {
+        "event": "page_requested",
+        "after": 2
+      },
+      {
+        "event": "page_committed",
+        "cursor": 4,
+        "received": 2,
+        "applied": 2
+      },
+      {
+        "event": "page_requested",
+        "after": 4
+      },
+      {
+        "event": "page_committed",
+        "cursor": 6,
+        "received": 2,
+        "applied": 2
+      },
+      {
+        "event": "caught_up",
+        "cursor": 6
+      }
+    ],
+    "error": null
+  },
+  "after_recovery": {
+    "streamId": "demo-catalog-v1",
+    "cursor": 6,
+    "appliedEvents": 6,
+    "items": [
+      {
+        "sku": "HW-104",
+        "name": "Brass cabinet handle",
+        "quantity": 15,
+        "lastCursor": 3
+      },
+      {
+        "sku": "HW-208",
+        "name": "Steel corner bracket",
+        "quantity": 22,
+        "lastCursor": 5
+      },
+      {
+        "sku": "WD-310",
+        "name": "Birch plywood panel",
+        "quantity": 8,
+        "lastCursor": 4
+      },
+      {
+        "sku": "WD-415",
+        "name": "Oak dowel, 12 mm",
+        "quantity": 36,
+        "lastCursor": 6
+      }
+    ]
+  },
+  "replayed_run": {
+    "exit_code": 0,
+    "events": [
+      {
+        "event": "page_requested",
+        "after": 6
+      },
+      {
+        "event": "page_committed",
+        "cursor": 6,
+        "received": 1,
+        "applied": 0
+      },
+      {
+        "event": "caught_up",
+        "cursor": 6
+      }
+    ],
+    "error": null
+  },
+  "after_replay": {
+    "streamId": "demo-catalog-v1",
+    "cursor": 6,
+    "appliedEvents": 6,
+    "items": [
+      {
+        "sku": "HW-104",
+        "name": "Brass cabinet handle",
+        "quantity": 15,
+        "lastCursor": 3
+      },
+      {
+        "sku": "HW-208",
+        "name": "Steel corner bracket",
+        "quantity": 22,
+        "lastCursor": 5
+      },
+      {
+        "sku": "WD-310",
+        "name": "Birch plywood panel",
+        "quantity": 8,
+        "lastCursor": 4
+      },
+      {
+        "sku": "WD-415",
+        "name": "Oak dowel, 12 mm",
+        "quantity": 36,
+        "lastCursor": 6
+      }
+    ]
+  },
+  "retry_run": {
+    "exit_code": 0,
+    "events": [
+      {
+        "event": "page_requested",
+        "after": 0
+      },
+      {
+        "event": "retry",
+        "after": 0,
+        "attempt": 1,
+        "reason": "http_429",
+        "delayMilliseconds": 1000
+      },
+      {
+        "event": "retry",
+        "after": 0,
+        "attempt": 2,
+        "reason": "http_503",
+        "delayMilliseconds": 500
+      },
+      {
+        "event": "page_committed",
+        "cursor": 2,
+        "received": 2,
+        "applied": 2
+      },
+      {
+        "event": "page_requested",
+        "after": 2
+      },
+      {
+        "event": "retry",
+        "after": 2,
+        "attempt": 1,
+        "reason": "http_429",
+        "delayMilliseconds": 1000
+      },
+      {
+        "event": "retry",
+        "after": 2,
+        "attempt": 2,
+        "reason": "http_503",
+        "delayMilliseconds": 500
+      },
+      {
+        "event": "page_committed",
+        "cursor": 4,
+        "received": 2,
+        "applied": 2
+      },
+      {
+        "event": "page_requested",
+        "after": 4
+      },
+      {
+        "event": "retry",
+        "after": 4,
+        "attempt": 1,
+        "reason": "http_429",
+        "delayMilliseconds": 1000
+      },
+      {
+        "event": "retry",
+        "after": 4,
+        "attempt": 2,
+        "reason": "http_503",
+        "delayMilliseconds": 500
+      },
+      {
+        "event": "page_committed",
+        "cursor": 6,
+        "received": 2,
+        "applied": 2
+      },
+      {
+        "event": "caught_up",
+        "cursor": 6
+      }
+    ],
+    "error": null
+  }
+}

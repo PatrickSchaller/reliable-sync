@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+**/data/
+.vs/
+.idea/
+*.user
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.*
